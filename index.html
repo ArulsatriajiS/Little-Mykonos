@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FAFCFF" />
+  <meta name="description" content="Little Mykonos — boutique hotel, Santorini staycation, cafe, dan Koukoumi Spa di pusat Kota Bandung." />
+  <title>Little Mykonos — Santorini Staycation Bandung</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Plus Jakarta Sans', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          },
+          colors: {
+            cobalt: '#1E3A8A',
+            aegean: '#0284C7',
+            alabaster: '#FAFCFF'
+          }
+        }
+      }
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3, .font-heading { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass-nav { box-shadow: 0 8px 30px rgba(30,58,138,.05); }
+    .hero-image { mask-image: linear-gradient(to bottom, black 86%, transparent 100%); }
+  </style>
+</head>
+
+<body class="overflow-x-hidden bg-alabaster text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
+  <nav class="glass-nav sticky top-0 z-40 border-b border-slate-200/60 bg-white/75 backdrop-blur-md dark:border-slate-800/60 dark:bg-slate-950/75">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-18 sm:px-6 lg:px-8">
+      <a href="#" class="flex min-w-0 items-center gap-2.5" aria-label="Little Mykonos, kembali ke atas">
+        <img src="./assets/logo.jpg" alt="Little Mykonos" class="h-10 w-10 rounded-full object-cover" />
+        <span class="font-heading text-sm font-extrabold text-cobalt sm:text-base dark:text-sky-300">Little Mykonos</span>
+      </a>
+
+      <div class="hidden items-center gap-5 md:flex">
+        <a href="#keunggulan" class="text-sm font-semibold text-slate-600 transition hover:text-cobalt dark:text-slate-300 dark:hover:text-sky-300">Keunggulan</a>
+        <a href="#layanan" class="text-sm font-semibold text-slate-600 transition hover:text-cobalt dark:text-slate-300 dark:hover:text-sky-300">Kamar &amp; Layanan</a>
+        <a href="#lokasi" class="text-sm font-semibold text-slate-600 transition hover:text-cobalt dark:text-slate-300 dark:hover:text-sky-300">Lokasi</a>
+
+        <button id="themeToggle" type="button" class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-amber-300" aria-label="Ganti mode tampilan">
+          <i data-lucide="moon" class="theme-moon h-4 w-4"></i>
+          <i data-lucide="sun" class="theme-sun hidden h-4 w-4"></i>
+        </button>
+
+        <a href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20memesan%20kamar." target="_blank" rel="noopener noreferrer" class="rounded-xl bg-sky-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-sky-600/20 transition hover:-translate-y-0.5 hover:bg-sky-700">
+          Booking Kamar
+        </a>
+      </div>
+
+      <div class="flex items-center gap-2 md:hidden">
+        <button id="themeToggleMobile" type="button" class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-amber-300" aria-label="Ganti mode tampilan">
+          <i data-lucide="moon" class="theme-moon h-4 w-4"></i>
+          <i data-lucide="sun" class="theme-sun hidden h-4 w-4"></i>
+        </button>
+        <button id="menuButton" type="button" class="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-cobalt dark:border-slate-700 dark:bg-slate-900 dark:text-sky-300" aria-label="Buka menu" aria-expanded="false">
+          <i data-lucide="menu" class="h-5 w-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobileMenu" class="hidden border-t border-slate-200/60 bg-white px-4 py-4 dark:border-slate-800 dark:bg-slate-950 md:hidden">
+      <div class="mx-auto flex max-w-6xl flex-col gap-1">
+        <a href="#keunggulan" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-900">Keunggulan</a>
+        <a href="#layanan" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-900">Kamar &amp; Layanan</a>
+        <a href="#lokasi" class="mobile-link rounded-lg px-3 py-3 text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-900">Lokasi</a>
+        <a href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20memesan%20kamar." target="_blank" rel="noopener noreferrer" class="mt-2 rounded-xl bg-sky-600 px-4 py-3 text-center text-sm font-bold text-white">
+          Booking Kamar
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="relative overflow-hidden">
+      <div class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-[0.92fr_1.08fr] lg:px-8 lg:py-20">
+        <div class="relative z-10">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-bold text-amber-700 dark:border-amber-700/40 dark:bg-amber-950/40 dark:text-amber-300">
+            <i data-lucide="award" class="h-4 w-4"></i>
+            Agoda Gold Circle Award Winner • Pusat Kota Bandung
+          </div>
+          <h1 class="max-w-xl font-heading text-3xl font-extrabold leading-[1.12] tracking-tight text-slate-900 sm:text-4xl lg:text-5xl dark:text-white">
+            Rasakan Pesona Staycation Ala Santorini di Jantung Bandung.
+          </h1>
+          <p class="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg dark:text-slate-300">
+            Nikmati kenyamanan boutique hotel berarsitektur putih-biru ikonik, kafe estetik, dan relaksasi Koukoumi Spa hanya selangkah dari pusat kota.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20booking%20kamar." target="_blank" rel="noopener noreferrer" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3.5 text-sm font-bold text-white shadow-lg shadow-sky-600/20 transition hover:-translate-y-0.5 hover:bg-sky-700">
+              <i data-lucide="message-circle" class="h-5 w-5"></i>
+              Booking via WhatsApp
+            </a>
+            <a href="#layanan" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-5 py-3.5 text-sm font-bold text-cobalt transition hover:border-sky-300 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900 dark:text-sky-300">
+              Lihat Kamar &amp; Layanan
+              <i data-lucide="arrow-down" class="h-4 w-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute -inset-4 rounded-[2rem] bg-sky-100/70 blur-3xl dark:bg-sky-900/10"></div>
+          <img src="./assets/773136142_18609833029044291_3238883247260159158_n.jpg" alt="Tangga putih estetik bergaya Santorini di Little Mykonos" class="hero-image relative h-[390px] w-full rounded-[1.75rem] object-cover shadow-2xl shadow-slate-300/50 sm:h-[520px] lg:h-[570px] dark:shadow-black/30" />
+          <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl border border-white/60 bg-white/85 px-4 py-3 backdrop-blur-md dark:border-slate-700/60 dark:bg-slate-950/85 sm:left-auto sm:right-5 sm:w-[230px]">
+            <div>
+              <p class="text-xs text-slate-500 dark:text-slate-400">Lokasi istimewa</p>
+              <p class="font-heading text-sm font-bold text-cobalt dark:text-sky-300">Pusat Kota Bandung</p>
+            </div>
+            <i data-lucide="map-pin" class="h-5 w-5 text-sky-600"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="keunggulan" class="border-y border-slate-100 bg-white py-14 dark:border-slate-800 dark:bg-slate-900/40 lg:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 text-center">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-sky-600">Mengapa Little Mykonos</p>
+          <h2 class="mt-2 font-heading text-2xl font-extrabold text-slate-900 sm:text-3xl dark:text-white">Nikmati pengalaman yang lebih istimewa</h2>
+        </div>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+          <article class="rounded-2xl border border-slate-200 bg-alabaster p-6 transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-800">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300"><i data-lucide="building-2" class="h-5 w-5"></i></div>
+            <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Arsitektur Ikonik Santorini</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Setiap sudut dirancang estetik dengan nuansa putih-biru khas Mediterania yang memanjakan mata.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-alabaster p-6 transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-800">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300"><i data-lucide="map-pinned" class="h-5 w-5"></i></div>
+            <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Lokasi Super Strategis</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Berada di kawasan Pasirkaliki/Kebon Kawung, dekat Stasiun Bandung dan pusat kuliner hits.</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-alabaster p-6 transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-800">
+            <div class="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300"><i data-lucide="award" class="h-5 w-5"></i></div>
+            <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Layanan Teruji &amp; Berpenghargaan</h3>
+            <p class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">Peraih Agoda Gold Circle Award 3 tahun berturut-turut dengan fasilitas kafe dan Koukoumi Spa.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan" class="py-14 lg:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-sky-600">Pilihan Stay &amp; Leisure</p>
+            <h2 class="mt-2 font-heading text-2xl font-extrabold text-slate-900 sm:text-3xl dark:text-white">Kamar &amp; Layanan Pilihan</h2>
+          </div>
+          <p class="max-w-md text-sm leading-6 text-slate-500 dark:text-slate-400">Temukan pengalaman paling sesuai untuk istirahat, bersantap, maupun merayakan momen.</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+            <img src="./assets/ANWiy9TwNkvHG2bhTHDw0jA7xASWjnc7SJkFVmpt11ipElLPgujMjUNxAMhq3KPdJ0bfL4L5fGFzbIlgg5FoubPtwM0RRe3tJXCWAzZaIEb3irBpqnwlk3hm.jpg" alt="Aegean Deluxe Room" class="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Aegean Deluxe Room</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Kamar nyaman berdesain Mediterania minimalis yang tenang untuk istirahat berkualitas di pusat kota.</p>
+              <p class="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">Mulai <span class="font-heading text-lg font-extrabold text-slate-900 dark:text-white">Rp 550.000</span> / malam</p>
+              <a class="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-700" href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20memesan%20Aegean%20Deluxe%20Room." target="_blank" rel="noopener noreferrer"><i data-lucide="shopping-bag" class="h-4 w-4"></i>Pesan Ini</a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+            <img src="./assets/ANWiy9TMvyBHaya947yAnXY6sKq01_JcqwhAxb1ddehJ37xCsblhagBXCPw6ZVYamj_0lYCRu93XidxGt4vEfT-AiurF0j2ZDnqLIFQ8p2smqXnZc4zGQbJK.jpg" alt="Santorini Signature Suite" class="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Santorini Signature Suite</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Kamar luas dengan sentuhan arsitektur putih-biru ikonik serta fasilitas lengkap untuk staycation berkesan.</p>
+              <p class="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">Mulai <span class="font-heading text-lg font-extrabold text-slate-900 dark:text-white">Rp 750.000</span> / malam</p>
+              <a class="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-700" href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20memesan%20Santorini%20Signature%20Suite." target="_blank" rel="noopener noreferrer"><i data-lucide="shopping-bag" class="h-4 w-4"></i>Pesan Ini</a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+            <img src="./assets/ANWiy9SvL-8KM3Wd6LpJtnRm6u0BH4YK4aYItyM8O7NfuCTMOhtTHZXPfQ3bES3BjJnPKZ63KDxrMYte4QRfbGUyE7a6D1rlzHQ2z3ZPbDu8mWZVqudogYsX.jpg" alt="Mykonos Cafe and All-Day Dining" class="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Mykonos Cafe &amp; All-Day Dining</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Nikmati racikan kopi spesialti dan hidangan lezat di area kafe bernuansa hangat Yunani.</p>
+              <p class="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">Mulai <span class="font-heading text-lg font-extrabold text-slate-900 dark:text-white">Rp 45.000</span></p>
+              <a class="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-700" href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20memesan%20Mykonos%20Cafe%20%26%20All-Day%20Dining." target="_blank" rel="noopener noreferrer"><i data-lucide="shopping-bag" class="h-4 w-4"></i>Pesan Ini</a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+            <img src="./assets/747625806_18602670628031578_1708782858289637256_n.jpg" alt="Paket Staycation dan Koukoumi Spa" class="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Paket Staycation &amp; Koukoumi Spa</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Kombinasi menginap nyaman lengkap dengan sesi relaksasi tubuh eksklusif di Koukoumi Spa.</p>
+              <p class="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">Mulai <span class="font-heading text-lg font-extrabold text-slate-900 dark:text-white">Rp 850.000</span> / paket</p>
+              <a class="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-700" href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20memesan%20Paket%20Staycation%20%26%20Koukoumi%20Spa." target="_blank" rel="noopener noreferrer"><i data-lucide="shopping-bag" class="h-4 w-4"></i>Pesan Ini</a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+            <img src="./assets/824390964_18354928774218590_700326889281245798_n.webp" alt="Spot foto dan private photoshoot Little Mykonos" class="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Spot Foto &amp; Private Photoshoot Access</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Abadikan momen estetik di setiap sudut bangunan bergaya pulau Mykonos tanpa perlu jauh ke Yunani.</p>
+              <p class="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400"><span class="font-heading text-lg font-extrabold text-slate-900 dark:text-white">Reservasi Tamu</span></p>
+              <a class="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-700" href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20reservasi%20Spot%20Foto%20%26%20Private%20Photoshoot%20Access." target="_blank" rel="noopener noreferrer"><i data-lucide="shopping-bag" class="h-4 w-4"></i>Pesan Ini</a>
+            </div>
+          </article>
+
+          <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl dark:border-slate-800 dark:bg-slate-900">
+            <img src="./assets/892411530_18018314852975096_2361207942009865163_n.jpg" alt="Cozy Lounge untuk private gathering" class="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.02]" />
+            <div class="flex flex-1 flex-col p-5">
+              <h3 class="font-heading text-lg font-bold text-cobalt dark:text-sky-300">Cozy Lounge &amp; Private Gathering</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">Ruang bersantai elegan dengan pencahayaan hangat untuk pertemuan intim maupun kerja santai.</p>
+              <p class="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400"><span class="font-heading text-lg font-extrabold text-slate-900 dark:text-white">Custom Package</span></p>
+              <a class="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-3 text-sm font-bold text-white transition hover:bg-sky-700" href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20menanyakan%20Cozy%20Lounge%20%26%20Private%20Gathering." target="_blank" rel="noopener noreferrer"><i data-lucide="shopping-bag" class="h-4 w-4"></i>Pesan Ini</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-slate-100 bg-white py-14 dark:border-slate-800 dark:bg-slate-900/40 lg:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 text-center">
+          <p class="text-sm font-bold uppercase tracking-[0.18em] text-sky-600">Ulasan Tamu</p>
+          <h2 class="mt-2 font-heading text-2xl font-extrabold text-slate-900 sm:text-3xl dark:text-white">Pengalaman yang selalu dikenang</h2>
+        </div>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <article class="rounded-2xl border border-slate-200 bg-alabaster p-6 dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex gap-0.5 text-amber-500" aria-label="5 dari 5 bintang"><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i></div>
+            <p class="mt-4 text-sm leading-6 text-slate-700 dark:text-slate-300">“Suasananya bersih dan seperti berada di Santorini. Setiap sudutnya indah untuk berfoto.”</p>
+            <p class="mt-5 font-heading text-sm font-bold text-cobalt dark:text-sky-300">Guest Google Maps</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-alabaster p-6 dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex gap-0.5 text-amber-500" aria-label="5 dari 5 bintang"><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i></div>
+            <p class="mt-4 text-sm leading-6 text-slate-700 dark:text-slate-300">“Kamarnya wangi dan nyaman banget. Pelayanannya ramah, cocok sekali untuk staycation.”</p>
+            <p class="mt-5 font-heading text-sm font-bold text-cobalt dark:text-sky-300">Guest Google Maps</p>
+          </article>
+          <article class="rounded-2xl border border-slate-200 bg-alabaster p-6 dark:border-slate-800 dark:bg-slate-900">
+            <div class="flex gap-0.5 text-amber-500" aria-label="5 dari 5 bintang"><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i></div>
+            <p class="mt-4 text-sm leading-6 text-slate-700 dark:text-slate-300">“Lokasinya strategis, dekat ke mana-mana. Stasiun, kuliner, dan pusat kota mudah dijangkau.”</p>
+            <p class="mt-5 font-heading text-sm font-bold text-cobalt dark:text-sky-300">Guest Google Maps</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lokasi" class="py-14 lg:py-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="grid overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white lg:grid-cols-2 dark:border-slate-800 dark:bg-slate-900">
+          <div class="relative min-h-[300px] overflow-hidden">
+            <img src="./assets/logo.jpg" alt="Fasad Little Mykonos" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-cobalt/75 via-cobalt/10 to-transparent"></div>
+            <div class="absolute bottom-5 left-5 right-5 rounded-2xl border border-white/20 bg-slate-950/55 p-4 text-white backdrop-blur-md">
+              <p class="text-xs font-bold uppercase tracking-widest text-sky-200">Temukan Kami</p>
+              <p class="mt-1 font-heading text-lg font-bold">Little Mykonos Bandung</p>
+            </div>
+          </div>
+          <div class="p-6 sm:p-8 lg:p-10">
+            <p class="text-sm font-bold uppercase tracking-[0.18em] text-sky-600">Lokasi &amp; Jam Operasional</p>
+            <h2 class="mt-2 font-heading text-2xl font-extrabold text-slate-900 dark:text-white">Berada di Jantung Kota Bandung</h2>
+            <div class="mt-6 space-y-5">
+              <div class="flex gap-3">
+                <i data-lucide="map-pin" class="mt-0.5 h-5 w-5 shrink-0 text-sky-600"></i>
+                <p class="text-sm leading-6 text-slate-600 dark:text-slate-300">Jl. Kebon Kawung No. 28, Pasir Kaliki, Kec. Cicendo, Kota Bandung, Jawa Barat 40171</p>
+              </div>
+              <div class="flex gap-3">
+                <i data-lucide="clock-3" class="mt-0.5 h-5 w-5 shrink-0 text-sky-600"></i>
+                <p class="text-sm leading-6 text-slate-600 dark:text-slate-300"><strong class="text-slate-900 dark:text-white">Resepsionis 24 Jam</strong><br />Check-in 14.00 WIB • Check-out 12.00 WIB</p>
+              </div>
+            </div>
+            <a href="https://www.google.com/maps/place/Little+Mykonos/@-6.9110865,107.6058889,13z/data=!4m21!1m11!3m10!1s0x2e68e7a7c91eef5b:0x641b86b3d884bd90!2sLittle+Mykonos!5m2!4m1!1i2!8m2!3d-6.9110865!4d107.6058889!10e5!16s%2Fg%2F11j_22xgwd!3m8!1s0x2e68e7a7c91eef5b:0x641b86b3d884bd90!5m2!4m1!1i2!8m2!3d-6.9110865!4d107.6058889!16s%2Fg%2F11j_22xgwd?authuser=0&amp;entry=ttu&amp;g_ep=EgoyMDI2MTExNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="mt-7 inline-flex min-h-12 items-center gap-2 rounded-xl border border-sky-600 px-5 py-3 text-sm font-bold text-sky-700 transition hover:bg-sky-600 hover:text-white dark:text-sky-300">
+              <i data-lucide="navigation" class="h-4 w-4"></i>
+              Buka di Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+    <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:px-6 md:flex-row md:items-center md:justify-between lg:px-8">
+      <div class="flex items-center gap-3">
+        <img src="./assets/logo.jpg" alt="Little Mykonos" class="h-10 w-10 rounded-full object-cover" />
+        <div>
+          <p class="font-heading text-sm font-extrabold text-cobalt dark:text-sky-300">Little Mykonos</p>
+          <p class="text-xs text-slate-500 dark:text-slate-400">Boutique Hotel • Santorini Staycation • Cafe &amp; Koukoumi Spa</p>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center gap-4">
+        <a href="https://www.instagram.com/littlemykonos_bdg/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-sky-600 dark:text-slate-300">
+          <i data-lucide="instagram" class="h-4 w-4"></i>@littlemykonos_bdg
+        </a>
+        <a href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20bertanya." target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-600 hover:text-sky-600 dark:text-slate-300">WhatsApp</a>
+      </div>
+    </div>
+    <div class="border-t border-slate-100 px-4 py-4 text-center text-xs text-slate-500 dark:border-slate-800 dark:text-slate-400">
+      © <span id="year"></span> Little Mykonos. All rights reserved.
+    </div>
+  </footer>
+
+  <a href="https://wa.me/62811328008?text=Halo%20Little%20Mykonos%2C%20saya%20ingin%20booking%20atau%20bertanya." target="_blank" rel="noopener noreferrer" class="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-green-900/20 transition hover:-translate-y-1 hover:bg-[#20bd5a]" aria-label="Chat WhatsApp Little Mykonos">
+    <i data-lucide="message-circle" class="h-7 w-7"></i>
+  </a>
+
+  <script>
+    const html = document.documentElement;
+    const themeButtons = [document.getElementById('themeToggle'), document.getElementById('themeToggleMobile')].filter(Boolean);
+    const savedTheme = localStorage.getItem('little-mykonos-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    function applyTheme(theme) {
+      const isDark = theme === 'dark';
+      html.classList.toggle('dark', isDark);
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', isDark ? '#0B132B' : '#FAFCFF');
+      themeButtons.forEach((button) => {
+        button.querySelector('.theme-moon')?.classList.toggle('hidden', isDark);
+        button.querySelector('.theme-sun')?.classList.toggle('hidden', !isDark);
+      });
+      localStorage.setItem('little-mykonos-theme', theme);
+      if (window.lucide) lucide.createIcons();
+    }
+
+    applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+    themeButtons.forEach((button) => button.addEventListener('click', () => {
+      applyTheme(html.classList.contains('dark') ? 'light' : 'dark');
+    }));
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuButton.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', isOpen);
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.innerHTML = isOpen ? '<i data-lucide="menu" class="h-5 w-5"></i>' : '<i data-lucide="x" class="h-5 w-5"></i>';
+      lucide.createIcons();
+    });
+    document.querySelectorAll('.mobile-link').forEach((link) => link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.innerHTML = '<i data-lucide="menu" class="h-5 w-5"></i>';
+      lucide.createIcons();
+    }));
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+    lucide.createIcons();
+  </script>
+</body>
+</html>
